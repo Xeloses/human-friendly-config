@@ -1,0 +1,17 @@
+{
+    "name": "xeloses/human-friendly-config",
+    "type": "library",
+    "description": "Human-friendly config file parser for PHP",
+    "keywords": ["config", "file"],
+    "homepage": "",
+    "license": "MIT",
+    "authors": [
+        {"name": "Xeloses"}
+    ],
+    "require": {
+        "php": ">=7.1"
+    },
+    "autoload": {
+        "psr-0": { "Xeloses\\HumanFriendlyConfig\\": "src/" }
+    }
+}
