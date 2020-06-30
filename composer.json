@@ -3,7 +3,7 @@
     "type": "library",
     "description": "Human-friendly config file parser for PHP",
     "keywords": ["config", "file"],
-    "homepage": "",
+    "homepage": "https://github.com/Xeloses/human-friendly-config",
     "license": "MIT",
     "authors": [
         {"name": "Xeloses"}
