@@ -85,7 +85,7 @@ class ConfigFile{
      *
      * @return mixed
      */
-    public function get(string $name, mixed $default = null)
+    public function get(string $name, $default = null)
     {
         if(empty($this->data) || !array_key_exists($name,$this->data))
         {
@@ -164,7 +164,7 @@ class ConfigFile{
      * @param string $name
      * @param mixed  $value
      */
-    public function __set(string $name, mixed $value)
+    public function __set(string $name, $value)
     {
         $this->data[$name] = $value;
     }
