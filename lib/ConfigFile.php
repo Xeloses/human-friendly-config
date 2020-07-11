@@ -65,13 +65,10 @@ class ConfigFile{
                 $line = trim($line);
                 if(!empty($line) && !preg_match('/^(\/\/|\#).*/',$line))
                 {
-                    list($name,$value) = preg_split('/[=:]+/',$line,-1,PREG_SPLIT_NO_EMPTY);
-                    $name  = (isset($name) && !is_null($name) && !empty(trim($name)))?preg_replace('/[\s]+/','_',strtolower(trim($name))):null;
-                    $value = (isset($value) && !is_null($value) && !empty(trim($value)))?trim($value):null;
-                    if($name)
-                    {
-                        $this->data[$name] = $value;
-                    }
+                    $parsed = explode('=',$line);
+                    $name  = preg_replace('/[\s]+/','_',strtolower(trim(array_shift($parsed))));
+                    $value = count($parsed) ? trim(implode('=',$parsed)) : null;
+                    $this->data[$name] = $value;
                 }
             }
         }

@@ -1,9 +1,7 @@
 # Human-friendly config files support for PHP.
 Human-friendly config file parser for PHP
 
-Allows to use config files with pairs 
-* `Option name = value`
-* `Option name: value`.
+Allows to use config files with pairs `Option name = value`
 
 Every pair should be on a new line.
 
