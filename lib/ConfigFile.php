@@ -163,6 +163,8 @@ class ConfigFile{
      *
      * @param string $name
      * @param mixed  $value
+     *
+     * @return void
      */
     public function __set(string $name, $value)
     {
@@ -171,6 +173,8 @@ class ConfigFile{
 
     /**
      * Handles dynamic attempts to convert object to string.
+     *
+     * @return string
      */
     public function __toString()
     {
