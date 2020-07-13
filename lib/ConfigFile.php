@@ -5,12 +5,14 @@
  *
  * @author     Xeloses (https://github.com/Xeloses)
  * @package    HumanFriendlyConfig (https://github.com/Xeloses/human-friendly-config)
- * @version    1.0
- * @copyright  Xeloses 2019
+ * @version    1.1
+ * @copyright  Xeloses 2019-2020
  * @license    MIT (http://en.wikipedia.org/wiki/MIT_License)
  */
 
 namespace Xeloses\HumanFriendlyConfig;
+
+use Xeloses\HumanFriendlyConfig\Exceptions\ConfigFileException;
 
 /**
  * ConfigFile class
@@ -97,9 +99,9 @@ class ConfigFile{
      *
      * @return void
      *
-     * @throws RuntimeException
+     * @throws ConfigFileException
      */
-    public function save()
+    public function save(): void
     {
         $data = '';
         foreach($this->data as $key => $value)
@@ -109,7 +111,7 @@ class ConfigFile{
 
         if(!file_put_contents($this->filename,trim($data)))
         {
-            throw new \RuntimeException('Error attempt to save config to file.');
+            throw new ConfigFileException('Error attempt to save config to file.');
         }
     }
 
@@ -121,9 +123,9 @@ class ConfigFile{
      * @return void
      *
      * @throws InvalidArgumentException
-     * @throws RuntimeException
+     * @throws ConfigFileException
      */
-    public function saveAs(string $new_file_name)
+    public function saveAs(string $new_file_name): void
     {
         if(empty($new_file_name))
         {
@@ -131,7 +133,7 @@ class ConfigFile{
         }
         if(is_file($new_file_name))
         {
-            throw new \RuntimeException('Could not save config to a new file (file already exists).');
+            throw new ConfigFileException('Could not save config to a new file (file already exists).');
         }
 
         $this->filename = $new_file_name;
