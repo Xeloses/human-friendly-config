@@ -18,5 +18,5 @@ namespace Xeloses\HumanFriendlyConfig\Exceptions;
  * @package    HumanFriendlyConfig
  * @subpackage Exceptions
  */
-class ConfigFileException extends Exception{}
+class ConfigFileException extends \Exception{}
 ?>
